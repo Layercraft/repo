@@ -2,6 +2,8 @@
 
 ## Gradle (Maven)
 
+Set in $HOME/.gradle/gradle.properties gpr.user to GitHub Username and gpr.key to Personal Access Token.
+
 ### Publish
 
 ```kotlin
@@ -28,13 +30,17 @@ publishing {
     }
 }
 ```
-Set in $HOME/.gradle/gradle.properties gpr.user to GitHub Username and gpr.key to Personal Access Token.
-
 
 ### Pull
 ```kotlin
 repositories {
-    maven(url="https://maven.pkg.github.com/Layercraft/repo")
+    maven { 
+        url = uri("https://maven.pkg.github.com/Layercraft/repo")
+        credentials {
+            username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
+            password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
+        }
+    }
 }
 
 dependencies {
