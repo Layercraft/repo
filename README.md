@@ -28,6 +28,8 @@ publishing {
     }
 }
 ```
+Set in $HOME/.gradle/gradle.properties gpr.user to GitHub Username and gpr.key to Personal Access Token.
+
 
 ### Pull
 ```kotlin
@@ -38,7 +40,6 @@ repositories {
 dependencies {
     implementation("io.layercraft.translator:translator-api:0.0.1")
 }
-
 ```
 
 
