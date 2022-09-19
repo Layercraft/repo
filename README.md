@@ -2,7 +2,7 @@
 
 ## Gradle (Maven)
 
-Set in $HOME/.gradle/gradle.properties gpr.user to GitHub Username and gpr.key to Personal Access Token.
+Set in $HOME/.gradle/gradle.properties gpr.user to GitHub Username and gpr.key to Personal Access Token with write:packages or read:packages.
 
 ### Publish
 
